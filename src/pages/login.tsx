@@ -1,5 +1,5 @@
-import { BodyComponent } from "../../components/body/body";
-import { LoginForm } from "../../components/loginForm/login";
+import { BodyComponent } from "../components/body/body";
+import { LoginForm } from "../components/loginForm/login";
 
 export function Login() {
 

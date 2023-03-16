@@ -10,3 +10,10 @@ font-family: 'Oranienbaum', serif;
 font-size: 40px;
 font-weight: 400;
 `;
+
+export const OranienbaumH2 = styled.h3`
+font-family: 'Oranienbaum', serif;
+font-size: 40px;
+font-weight: 400;
+color: black;
+`;

@@ -27,6 +27,8 @@ export interface ContextProps {
     userData: UserData | null;
     setUserData: React.Dispatch<React.SetStateAction<UserData | null>>;
     handleLogin: (data: LoginData) => Promise<void>;
+    page: string;
+    setPage: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export interface ProviderType {

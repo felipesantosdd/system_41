@@ -6,7 +6,6 @@ padding: 0;
 display: flex;
 align-items: center;
 justify-content: center;
-width: 100vw;
 min-height: 100vh;
 background-color: #272C3F;
 `

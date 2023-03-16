@@ -10,6 +10,9 @@ export const Context = createContext<ContextProps>({} as ContextProps)
 
 
 export function Provider({ children }: ProviderType) {
+
+    const [page, setPage] = useState<string>('products')
+
     const [userData, setUserData] = useState<UserData | null>(null);
 
     async function handleLogin(data: LoginData) {
@@ -17,8 +20,8 @@ export function Provider({ children }: ProviderType) {
             const response: LoginResponse = await login(data);
             localStorage.setItem("authToken", response.access)
             getLogedUser()
-        } catch (error) {
-            console.error(error);
+        } catch (error: any) {
+            console.error(error.response.data);
         }
     }
 
@@ -26,6 +29,7 @@ export function Provider({ children }: ProviderType) {
         try {
             const response: UserData = await getMySelf()
             setUserData(response)
+            console.log(response)
         } catch (error) {
             console.error(error)
         }
@@ -36,7 +40,7 @@ export function Provider({ children }: ProviderType) {
     return (
         <>
             <Context.Provider value={{
-                userData, setUserData, handleLogin,
+                userData, setUserData, handleLogin, page, setPage
             }}>
                 {children}
             </Context.Provider>
