@@ -55,16 +55,17 @@ export default function SwipeableTemporaryDrawer() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {buttons.map((button: any, index: number) => (
-                    <ListItem key={index} disablePadding>
-                        <ListItemButton onClick={button.onClick}>
-                            <ListItemIcon>
-                                <img src={button.icon} alt={button.name} style={{ maxHeight: '40px', height: 'auto !important ' }} />
-                            </ListItemIcon>
-                            <ListItemText primary={button.name} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
+                <ListItem disablePadding>
+                    <ListItemButton onClick={() => {
+                        navigate("/dashboard")
+                        handleGetProducts()
+                    }}>
+                        <ListItemIcon>
+                            <img src='https:cdn-icons-png.flaticon.com/512/3074/3074076.png' style={{ maxHeight: '40px', height: 'auto' }} />
+                        </ListItemIcon>
+                        <ListItemText primary="Produtos" />
+                    </ListItemButton>
+                </ListItem>
                 <NewProduct />
                 <NewContract />
 
@@ -79,17 +80,7 @@ export default function SwipeableTemporaryDrawer() {
                         <ListItemText primary="Clientes" />
                     </ListItemButton>
                 </ListItem>
-                <ListItem disablePadding>
-                    <ListItemButton onClick={() => {
-                        navigate("/dashboard")
-                        handleGetProducts()
-                    }}>
-                        <ListItemIcon>
-                            <img src='https:cdn-icons-png.flaticon.com/512/3074/3074076.png' style={{ maxHeight: '40px', height: 'auto' }} />
-                        </ListItemIcon>
-                        <ListItemText primary="Produtos" />
-                    </ListItemButton>
-                </ListItem>
+
                 <ListItem disablePadding>
                     <ListItemButton onClick={() => { logout() }}>
                         <ListItemIcon>
