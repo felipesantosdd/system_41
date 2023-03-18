@@ -4,7 +4,8 @@ import { api } from "./api";
 
 export async function login(data: LoginData): Promise<LoginResponse> {
     try {
-        const response = await api.post<LoginResponse>('accounts/login/', data);
+        const response = await api
+            .post<LoginResponse>('accounts/login/', data);
         if (response.data) {
             return response.data;
         } else {

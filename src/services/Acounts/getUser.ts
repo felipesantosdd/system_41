@@ -1,7 +1,7 @@
-import { UserData } from "../interfaces/interfaces";
-import { api } from "./api";
+import { UserDataType } from "../../interfaces/interfaces";
+import { api } from "../api";
 
-export async function getMySelf(): Promise<UserData> {
+export async function getMySelf(): Promise<UserDataType> {
     try {
         const token = localStorage.getItem("authToken")
         const response = await api.get('accounts/myself/', {

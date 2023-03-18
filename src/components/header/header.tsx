@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { Search, SearchIconWrapper, StyledInputBase, Container } from './header.style'
 import SwipeableTemporaryDrawer from '../menu/menu';
@@ -15,7 +14,7 @@ export default function SearchAppBar() {
 
         <Container>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static">
+                <AppBar position="static" sx={{ backgroundColor: '#232F47 !important', color: "white !important" }}>
                     <Toolbar>
                         <IconButton
                             size="large"

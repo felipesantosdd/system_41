@@ -22,7 +22,7 @@ export function LoginForm() {
     }
 
     return (
-        <LoginContainer>
+        <LoginContainer style={{ margin: "auto" }}>
             <OranienbaumH1>Login</OranienbaumH1>
             <Box
                 sx={{

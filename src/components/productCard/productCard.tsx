@@ -1,19 +1,47 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ProductCardProps } from '../../interfaces/interfaces';
 import { OranienbaumH2 } from '../fonts/Oranienbaum/Oranienbaum.font';
 import './styles.css';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { Context } from '../../provider/provider';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import InfoProduct from '../modal/productInfo';
 
-export function ProductCard() {
+export function ProductCard({ id, name, type, color, value, image }: ProductCardProps) {
+
+    const { carr, setCarr, products } = useContext(Context)
+
+    function addToCarr(key: string) {
+        const newCarr: any = carr
+        const product = products?.find((p) => p.id === key)
+        newCarr.push(product)
+
+        setCarr(newCarr)
+    }
+
+
 
     return (
 
-        <div className="card">
-            <img className='img' src="https://i.pinimg.com/736x/02/d6/3a/02d63a5b62e5a9ced750b5db119f5e5b--asuna-cosplay-cosplay-sword.jpg" alt="" />
+        <div className="card" key={id}>
+            <img className='img' src={`http://127.0.0.1:8000${image}`} alt={image} />
+
             <div className="textBox">
-                <OranienbaumH2>Product Name</OranienbaumH2>
-                <span>Cryptocurrency</span>
-                <p className="text price">1.654,34€</p>
+                <OranienbaumH2>{`${type} ${color}`}</OranienbaumH2>
+                <span>{name}</span>
+                <p className="text price">{value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+
+                <Stack direction="row" spacing={2}>
+                    <InfoProduct id={id}></InfoProduct>
+                    <Button variant="contained" onClick={() => {
+                        addToCarr(id)
+                    }}><AddShoppingCartIcon /></Button>
+                </Stack>
+
 
             </div>
+
         </div>
 
     )

@@ -4,10 +4,9 @@ import { LoginForm } from "../components/loginForm/login";
 export function Login() {
 
     return (
-        <>
-            <BodyComponent>
-                <LoginForm />
-            </BodyComponent>
-        </>
+
+        <BodyComponent>
+            <LoginForm />
+        </BodyComponent>
     )
 }
