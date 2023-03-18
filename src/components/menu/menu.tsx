@@ -21,7 +21,7 @@ export default function SwipeableTemporaryDrawer() {
 
     const navigate = useNavigate()
 
-    const { buttons, logout, handleGetClients
+    const { buttons, logout, handleGetClients, handleGetProducts
     } = useContext(Context);
 
     const [state, setState] = React.useState({
@@ -77,6 +77,17 @@ export default function SwipeableTemporaryDrawer() {
                             <img src='https:cdn-icons-png.flaticon.com/512/2620/2620247.png' style={{ maxHeight: '40px', height: 'auto' }} />
                         </ListItemIcon>
                         <ListItemText primary="Clientes" />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton onClick={() => {
+                        navigate("/dashboard")
+                        handleGetProducts()
+                    }}>
+                        <ListItemIcon>
+                            <img src='https:cdn-icons-png.flaticon.com/512/3074/3074076.png' style={{ maxHeight: '40px', height: 'auto' }} />
+                        </ListItemIcon>
+                        <ListItemText primary="Produtos" />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>

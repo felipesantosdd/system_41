@@ -25,7 +25,8 @@ export function ProductCard({ id, name, type, color, value, image }: ProductCard
     return (
 
         <div className="card" key={id}>
-            <img className='img' src={`http://127.0.0.1:8000${image}`} alt={image} />
+            {/* <img className='img' src={`http://127.0.0.1:8000${image}`} alt={image} /> */}
+            <img className='img' src={`https://system41-production.up.railway.app${image}`} alt={image} />
 
             <div className="textBox">
                 <OranienbaumH2>{`${type} ${color}`}</OranienbaumH2>
